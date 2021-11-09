@@ -1,0 +1,15 @@
+<div class="films">
+    <mat-card class="film-card" *ngFor="let film of films" (click)="onCardSelect(film.id)">
+        <mat-card-header>
+          <mat-card-title>{{ film.title }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image
+          [src]="film.poster"
+          alt="image">
+        <mat-card-content>
+          <p>Year: {{ film.year }}</p>
+          <p>{{ film.type | titlecase }}</p>
+        </mat-card-content>
+    </mat-card>
+    <div *ngIf="error">{{ error }}</div>
+</div>

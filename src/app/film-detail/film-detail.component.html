@@ -1,0 +1,23 @@
+<div class="film-detail-container">
+    <div class="film-detail-inner">
+        <div class="film-detail-data">
+            <div>
+                <img [src]="film.poster" [alt]="film.title">
+            </div>
+            <div class="film-detail-description">
+                <h1>{{ film.title }}</h1>
+                <h2>{{ film.genre }}</h2>
+                <h2>{{ film.year }}</h2>
+                <div>
+                   <p><span style="font-weight: bold;">Actors:</span> {{ film.actors }}</p>
+                   <p><span style="font-weight: bold;">Director:</span> {{ film.director }}</p>
+                   <p><span style="font-weight: bold;">Writer:</span> {{ film.writer }}</p>
+                   <p><span style="font-weight: bold;">Country:</span> {{ film.country }}</p>
+                   <p><span style="font-weight: bold;">Runtime:</span> {{ film.runtime }}</p>
+                </div>
+                <p>{{ film.plot }}</p>
+            </div>
+        </div>
+        <button mat-raised-button type="button" (click)="goBack()">Back</button>
+    </div>
+</div>

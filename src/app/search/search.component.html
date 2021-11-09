@@ -1,0 +1,27 @@
+<div class="search-container">
+  <div class="search-inner">
+    <span class="search-logo" routerLink="/">Movie db</span>
+    <div class="search-form" [formGroup]="form">
+        <mat-form-field class="search-control" appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title" [formControl]="$any(form).get('title')" autocomplete="off">
+            <mat-hint *ngIf="noTitle">Please enter a title</mat-hint>
+        </mat-form-field>
+        <mat-form-field class="search-control" appearance="fill">
+          <mat-label>Type</mat-label>
+          <mat-select formControlName="type">
+            <mat-option
+              *ngFor="let type of typeList"
+              [value]="type.id">{{ type.label }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="search-control" appearance="fill">
+          <mat-label>Year</mat-label>
+          <input type="number" matInput formControlName="year" [formControl]="$any(form).get('year')">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="search()" class="search-button">Search</button>
+        <button mat-raised-button (click)="clearSearch()" class="search-button">Clear search</button>
+    </div>
+  </div>
+</div>

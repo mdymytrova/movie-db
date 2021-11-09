@@ -1,0 +1,17 @@
+.film-detail {
+    &-container {
+        width: 100%; 
+    }
+    &-inner {
+        width: 60%;
+        margin: 0 auto;
+    }
+    &-data {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    &-description {
+        padding: 20px;
+    }
+}
